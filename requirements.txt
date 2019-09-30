@@ -1,4 +1,6 @@
 django==2.2
 psycopg2==2.8.3
+psycopg2-binary
 django-crispy-forms
 djangorestframework==3.10.3
+pillow
