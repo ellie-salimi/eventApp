@@ -1,9 +1,15 @@
 from django.shortcuts import render
+from .models import Event
+
 
 def index(request):
-    return render(request, 'events/events.html')
+    events = Event.objects.all()
+    context = {
+        'events': events
+    }
+    return render(request, 'events/events.html', context)
 
-def event(request):
+def event(request, event_id):
     return render(request, 'events/event.html')
 
 

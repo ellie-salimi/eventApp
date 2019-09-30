@@ -1,4 +1,6 @@
 {
     "git.ignoreLimitWarning": true,
-    "python.pythonPath": "venv\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\Ellie\\AppData\\Local\\Enthought\\Canopy\\edm\\envs\\User\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }
