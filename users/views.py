@@ -63,13 +63,5 @@ def logout(request):
     return redirect('index')
 
 def dashboard(request):
-    if request.method == 'POST':
-        auth.logout(request)
-        messages.success(request, 'You are now logged out')
-        return redirect('index')
-#   user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
 
-#   context = {
-#     'contacts': user_contacts
-#   }
-#   return render(request, 'users/dashboard.html', context)
+  return render(request, 'users/dashboard.html')

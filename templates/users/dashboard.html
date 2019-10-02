@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
-
-{% block title %} | User Dashboard {% endblock %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <section id="showcase-inner" class="py-5 text-white">
@@ -36,29 +35,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Welcome {{ user.first_name }}</h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Property</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for contact in contacts %}
-                        <tr>
-                            <td>{{ contact.id }}</td>
-                            <td>{{ contact.listing }}</td>
-                            <td>
-                                <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">View Listing</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                <h2>Welcome {{ user.username }}</h2>
+                {% if user %}
+                    <p>Here are events your are hosting</p>
+                    {% for event in events %}
+                        {% if user.username == event.host %}
+                        <div class="listing-heading text-center">
+                            <h4 class="text-primary">{{event.title}}</h4>
+                            <p>
+                                <i class="fas fa-map-marker text-secondary"></i> 
+                                {{event.title}}
+                            </p>
+                        </div>
+                        {% endif %}
+                    {% endfor%}
+                
                 {% else %}
-                <p>You have not made any inquiries</p>
+                    <p>You have not hosted any events</p>
                 {% endif %}
             </div>
         </div>

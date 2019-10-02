@@ -8,11 +8,11 @@
         <div class="home-search p-5">
             <div class="overlay p-5">
                 <h1 class="display-4 mb-4">
-                    Property Searching Just Got So Easy
+                    Free Events Near You
                 </h1>
-                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae quas, asperiores
-                    eveniet vel nostrum magnam
-                    voluptatum tempore! Consectetur, id commodi!</p>
+                <p class="lead">You can search for free events near you here.
+                    Just note I am stil working on my website and any feedbacks are appreciated here!
+                </p>
                 <div class="search">
                     <form action="{% url 'search' %}">
                         <!-- Form Row 1 -->
@@ -20,7 +20,7 @@
                             <div class="col-md-4 mb-3">
                                 <label class="sr-only">Keywords</label>
                                 <input type="text" name="keywords" class="form-control"
-                                    placeholder="Keyword (Pool, Garage, etc)">
+                                    placeholder="Keyword (Programming, Dancing, etc)">
                             </div>
 
                             <div class="col-md-4 mb-3">
@@ -29,36 +29,20 @@
                             </div>
 
                             <div class="col-md-4 mb-3">
-                                <label class="sr-only">State</label>
-                                <select name="state" class="form-control">
-                                    <option selected="true" disabled="disabled">State (All)</option>
-                                    {% for key,value in state_choices.items %}
-                                    <option value="{{ key }}">{{ value }}</option>
+                                <label class="sr-only">Your mood</label>
+                                <select name="Category" class="form-control">
+                                    <option selected="true" disabled="disabled">Categories (All)</option>
+                                    {% for name in categories %}
+                                    <option >{{ name }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
                         </div>
                         <!-- Form Row 2 -->
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label class="sr-only">Bedrooms</label>
-                                <select name="bedrooms" class="form-control">
-                                    <option selected="true" disabled="disabled">Bedrooms (All)</option>
-                                    {% for key,value in bedroom_choices.items %}
-                                    <option value="{{ key }}">{{ value }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <select name="price" class="form-control" id="type">
-                                    <option selected="true" disabled="disabled">Max Price (Any)</option>
-                                    {% for key,value in price_choices.items %}
-                                    <option value="{{ key }}">{{ value }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+                        <!--Didn't need another row-->
+
                         </div>
-                        <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button>
+                        <button class="btn btn-secondary btn-block mt-4" type="submit">Search</button>
                     </form>
                 </div>
             </div>
@@ -71,7 +55,7 @@
 {% include 'partials/_alerts.html' %}
 
 <!-- Events -->
-<section id="listings" class="py-4">
+<section id="events" class="py-4">
     <div class="container">
         <div class="row">
             {% if events %}
@@ -89,7 +73,7 @@
                         <div class="listing-heading text-center">
                             <h4 class="text-primary">{{event.title}}</h4>
                             <p>
-                                <i class="fas fa-map-marker text-secondary"></i> {{events.title}}</p>
+                                <i class="fas fa-map-marker text-secondary"></i> {{event.title}}</p>
                         </div>
                         <hr>
                         <div class="row py-2 text-secondary">
@@ -123,28 +107,26 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-4">
-                <i class="fas fa-comment fa-4x mr-4"></i>
+                <i class="fas fa-project-diagram fa-4x mr-4"></i>
                 <hr>
-                <h3>Consulting Services</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-                    provident iste consequatur
-                    hic dignissimos ratione ea quae.</p>
+                <h3>How it works?</h3>
+                <p>You should make a profile for yourself in you want to 
+                    host any events.
+                    it's free to make a profile and the other thing your event should be free as well.</p>
             </div>
             <div class="col-md-4">
-                <i class="fas fa-home fa-4x mr-4"></i>
+                <i class="fas fa-dollar-sign fa-4x mr-4"></i>
                 <hr>
-                <h3>Propery Management</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-                    provident iste consequatur
-                    hic dignissimos ratione ea quae.</p>
+                <h3>Pricing</h3>
+                <p>We don't charge for our services.</p>
             </div>
             <div class="col-md-4">
-                <i class="fas fa-suitcase fa-4x mr-4"></i>
+                <i class="fas fa-envelope-open-text fa-4x mr-4"></i>
                 <hr>
-                <h3>Renting & Selling</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, debitis nam! Repudiandae,
-                    provident iste consequatur
-                    hic dignissimos ratione ea quae.</p>
+                <h3>Contact me</h3>
+                <p>I should probably put a link to contact me here!
+                    Life is so hard 
+                </p>
             </div>
         </div>
     </div>

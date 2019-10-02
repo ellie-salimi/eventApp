@@ -67,7 +67,10 @@
                             </li>
                             <li class="list-group-item text-secondary">
                                 <i class="fas fa-list"></i> Categories:
-                                <span class="float-right">{{ event.categories }}
+                                <span class="float-right">
+                                    {% for category in event.categories.all %}
+                                        {{ category.name }}
+                                    {% endfor %}
                                 </span>
                             </li>
 
