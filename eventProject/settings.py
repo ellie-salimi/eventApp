@@ -41,6 +41,7 @@ if 'BEANSTALK_HOST' in os.environ:
 
 
 # Application definition
+#test test
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
