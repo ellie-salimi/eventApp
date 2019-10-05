@@ -5,4 +5,5 @@ django-crispy-forms
 djangorestframework==3.10.3
 pillow
 pylint-django
-django-storages==1.7 and boto3==1.9
+django-storages==1.7
+boto3==1.9
