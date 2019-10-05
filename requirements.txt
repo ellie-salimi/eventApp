@@ -7,3 +7,4 @@ pillow
 pylint-django
 django-storages==1.7
 boto3==1.9
+flask==1.0.2
